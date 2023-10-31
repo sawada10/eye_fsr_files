@@ -1,0 +1,5 @@
+<launch>
+  <node pkg="eye_fsr_files" node="power_to_touch" type="power_sub_touch_status_pub.py"/>
+  <node pkg="eye_fsr_files" node="touch_to_eye" type="touched_status_sub_eye_status_pub.py"/>
+  <node pkg="eye_fsr_files" node="touch_to_action" type="touched_status_sub_action_pub.py"/>
+</launch>

@@ -1,0 +1,27 @@
+#!/usr/bin/env roseus
+
+(make-kxr-robot "kxrl2l2a6h2m")
+(load "rcb4rosinterface.l")
+
+(ros::load-ros-manifest "roseus")
+(ros::roseus "action_sub")
+
+(send *ri* :com-init)
+(send *ri* :hold)
+(send *ri* :neutral)
+
+;; callback function
+(defun cb (msg)
+  (setq action (send msg :data))
+  (if (string-equal action 'nod)
+	  (progn
+		(send *robot* :neutral)
+		(send *robot* :head-neck-p 30)
+		(send *ri* :angle-vector (send *robot* :angle-vector))))
+  )
+
+(ros::subscribe "action" std_msgs::string #'cb)
+
+(do-until-key
+ (ros::spin-once)
+)
