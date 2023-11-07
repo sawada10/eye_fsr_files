@@ -1,0 +1,5 @@
+<launch>
+  <node pkg="eye_fsr_files" name="power_to_message" type="power_sub_message_pub.py"/>
+  <node name="power_plot" pkg="rqt_plot" type="rqt_plot"
+        args="/power/data" />  
+</launch>
