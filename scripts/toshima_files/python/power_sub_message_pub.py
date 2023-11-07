@@ -14,9 +14,13 @@ class pubsubNode():
         self.pub = rospy.Publisher('/power_message', String, queue_size=1)
 
     def callback(self, sub_msg):
+        # SubscribeしたメッセージからFSRのセンサ値を取り出す
         power = sub_msg.data
+        # Publishするメッセージのテンプレート
         pub_msg = String()
+        # センサ値をPublishするメッセージに入れる
         pub_msg.data = "Received power {}".format(power)
+        # メッセージをPublishする
         self.publish(pub_msg)
 
     def publish(self, data):
