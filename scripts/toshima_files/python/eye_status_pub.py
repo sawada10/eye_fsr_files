@@ -38,6 +38,12 @@ def original_func(pub_msg, emotion):
     """
     if emotion == "嬉しい":
         pub_msg.data = 6
+    elif emotion == "悲しい":
+        pub_msg.data = 5
+    elif emotion == "キレた":
+        pub_msg.data = 4
+    elif emotion == "寝たい":
+        pub_msg.data = 3
     # elif emotion == "hoge":
     #   pub_msg.data = number
 
@@ -58,6 +64,7 @@ if __name__ == '__main__':
         # もし"終わり"が入力したらプログラムを止める
         if emotion == "終わり":
             break
-        sample_func(pub_msg, emotion)
+        # sample_func(pub_msg, emotion)
+        original_func(pub_msg, emotion)
         # publishする
         node.publish(pub_msg)

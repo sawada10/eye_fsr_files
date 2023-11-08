@@ -18,7 +18,7 @@ class pubsubNode():
     def callback(self, sub_msg):
         # SubscribeしたメッセージからFSRのセンサ値を取り出す
         power = sub_msg.data
-        print("recieved power :{]".format(power))
+        print("received power :{}".format(power))
         # Publishするメッセージのテンプレート
         pub_msg = String()
         # センサ値をPublishするメッセージに入れる
@@ -29,7 +29,7 @@ class pubsubNode():
     def original_callback(self, sub_msg):
         # SubscribeしたメッセージからFSRのセンサ値を取り出す
         power = sub_msg.data
-        print("recieved power :{}".format(power))
+        print("received power :{}".format(power))
         if power >= 0 and power <= 50:
             print ("ド")
         elif power > 50 and power <= 100:
