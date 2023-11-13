@@ -15,18 +15,18 @@ class pubsubNode():
 
     def callback(self, sub_msg):
         # SubscribeしたメッセージからFSRのセンサ値を取り出す
-        power = sub_msg.data
-        print("received power :{}".format(power))
+        power_value = sub_msg.data
+        print("received power :{}".format(power_value))
 
     def original_callback(self, sub_msg):
         # SubscribeしたメッセージからFSRのセンサ値を取り出す
-        power = sub_msg.data
-        print("received power :{}".format(power))
-        if power >= 0 and power <= 50:
+        power_value = sub_msg.data
+        print("received power :{}".format(power_value))
+        if power_value >= 0 and power_value <= 50:
             print ("ド")
-        elif power > 50 and power <= 100:
+        elif power_value > 50 and power_value <= 100:
             print("レ")
-        elif power > 100 and power <= 150:
+        elif power_value > 100 and power_value <= 150:
             print("ミ")
         else:
             print("ファ")
