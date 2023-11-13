@@ -9,9 +9,9 @@ from std_msgs.msg import Float32
 class pubsubNode():
     def __init__(self):
         # Subscriberの作成
-        self.sub = rospy.Subscriber('/power', Float32, self.callback)
+        #self.sub = rospy.Subscriber('/power', Float32, self.callback)
         ## もしも、コールバック関数を編集したいときは、下の行の"#"を外す
-        #self.sub = rospy.Subscriber('/power', Float32, self.original_callback)
+        self.sub = rospy.Subscriber('/power', Float32, self.original_callback)
         # Publisherの作成
         self.pub = rospy.Publisher('/power_message', String, queue_size=1)
 

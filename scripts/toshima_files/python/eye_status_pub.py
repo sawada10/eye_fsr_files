@@ -64,7 +64,7 @@ if __name__ == '__main__':
         # もし"終わり"が入力したらプログラムを止める
         if emotion == "終わり":
             break
-        # sample_func(pub_msg, emotion)
+        #sample_func(pub_msg, emotion)
         original_func(pub_msg, emotion)
         # publishする
         node.publish(pub_msg)

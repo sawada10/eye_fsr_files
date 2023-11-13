@@ -27,7 +27,7 @@ def original_func(pub_msg, emotion):
     この関数を編集してみましょう
     """
     if statement == "元気だね":
-        pub_msg.data = "nod"
+        pub_msg.data = "shake"
     # elif statement == "hoge":
     #   pub_msg.data = number
 
