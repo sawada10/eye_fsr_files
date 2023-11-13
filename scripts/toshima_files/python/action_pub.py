@@ -22,12 +22,12 @@ def sample_func(pub_msg, statement):
         pub_msg.data = "nod"
 
 
-def original_func(pub_msg, emotion):
+def original_func(pub_msg, statement):
     """
     この関数を編集してみましょう
     """
     if statement == "元気だね":
-        pub_msg.data = "shake"
+        pub_msg.data = "nod"
     # elif statement == "hoge":
     #   pub_msg.data = number
 
@@ -48,5 +48,6 @@ if __name__ == '__main__':
         if statement == "終わり":
             break
         sample_func(pub_msg, statement)
+        # original_fun(pub_msg, statement)
         # publishする
         node.publish(pub_msg)
