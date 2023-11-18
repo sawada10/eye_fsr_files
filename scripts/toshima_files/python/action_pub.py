@@ -48,6 +48,6 @@ if __name__ == '__main__':
         if statement == "終わり":
             break
         sample_func(pub_msg, statement)
-        # original_fun(pub_msg, statement)
+        # original_func(pub_msg, statement)
         # publishする
         node.publish(pub_msg)
